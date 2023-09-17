@@ -1,9 +1,11 @@
 package telran.io.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -43,7 +45,7 @@ class FileSystemTests {
 	}
 	@Test
 	void displayDirTest() throws IOException {
-		MyFiles.displayDir("/Users/User", 3);
+		MyFiles.displayDir("C:\\", 2);
 	}
 	
 

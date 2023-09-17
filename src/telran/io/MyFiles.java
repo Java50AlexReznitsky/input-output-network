@@ -1,11 +1,12 @@
 package telran.io;
 
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.EnumSet;
 import java.util.HashSet;
-import java.util.Set;
 
 public class MyFiles {
 	private static final int SPACES_PER_LEVEL = 2;
@@ -30,7 +31,7 @@ public class MyFiles {
 //		Files.walk(normalizedPath, maxDepth)
 //		.forEach(p -> printNode(p, count, null));
 		printNode(normalizedPath, count, null);
-		Files.walkFileTree(normalizedPath, EnumSet.noneOf(FileVisitOption.class), maxDepth, new SimpleFileVisitor<Path>() {
+		Files.walkFileTree(normalizedPath, new HashSet<>(), maxDepth, new SimpleFileVisitor<Path>() {
 			@Override
 			public FileVisitResult visitFile(Path file, BasicFileAttributes attr) {
 				printNode(file, count, null);

@@ -45,7 +45,7 @@ class FileSystemTests {
 	}
 	@Test
 	void displayDirTest() throws IOException {
-		MyFiles.displayDir("C:\\", 2);
+		MyFiles.displayDir(".", 3);
 	}
 	
 
